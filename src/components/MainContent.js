@@ -1,12 +1,26 @@
 import JourneyCard from "./JourneyCard";
-
+import data from '../assets/data'
 export default function MainContent(){
+    console.log(data)
     return (
         <div className="main-content">
-            <h3>This is the main </h3>
+            {
+                data.map((journey,index)=>
+                    <JourneyCard 
+                    key={index}
+                    title={journey.title}
+                    location={journey.location}
+                    startDate={journey.startDate}
+                    endDate={journey.endDate}
+                    description={journey.description}
+                    imageUrl={journey.imageUrl}
+                    googleMapsUrl={journey.googleMapsUrl}
+                    />
+                    )
+            }
+            {/* <JourneyCard location=''/>
             <JourneyCard/>
-            <JourneyCard/>
-            <JourneyCard/>
+            <JourneyCard/> */}
         </div>
         
 
